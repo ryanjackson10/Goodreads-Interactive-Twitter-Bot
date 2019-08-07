@@ -60,7 +60,7 @@ def genbook(id_number):
         popular_shelves = possible_book.popular_shelves
         # goodreads doesn't sort by genre, so we have to rely on user generated bookshelves
         popular_shelves_string = [str(i) for i in popular_shelves]
-        if keyword in popular_shelves_string[0:30] and 100 < int(rating_count) < 20000 and float(possible_average_rating) > 4.1:
+        if keyword in popular_shelves_string[0:30] and 50 < int(rating_count) < 20000 and float(possible_average_rating) > 4.1:
             return possible_book
         else:
             return genbook(random.randint(1, 15000))
