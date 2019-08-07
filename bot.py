@@ -76,7 +76,7 @@ def reply_to_tweets():
     mentions = api.mentions_timeline(last_seen_id, tweet_mode = 'extended')
 
 
-    genres = ['poetry', 'fantasy', 'non-fiction', 'nonfiction' 'drama',
+    genres = ['poetry', 'fantasy', 'non-fiction', 'nonfiction' 'drama', 'science'
     'history', 'fiction', 'horror', 'suspense', 'crime', 'politics', 'philosophy', 'economics']
 
 
@@ -107,7 +107,7 @@ def reply_to_tweets():
             if hasKeyword is True:
                 api.update_status('@' + mention.user.screen_name + f' With an average rating of {daily_book_average_rating} from {ratings_count} readers, your underrated {keyword} book is \'{daily_book}\' by {daily_book_authors}!', mention.id)
             elif hasKeyword is False:
-                api.update_status('@' + mention.user.screen_name + f' check bio', mention.id)
+                api.update_status('@' + mention.user.screen_name + f' It like there aren\'t any genres in your tweet. Check our bio for applicable genres!', mention.id)
         except Exception:
             return reply_to_tweets()
 
